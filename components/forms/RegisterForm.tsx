@@ -8,7 +8,7 @@ import { Form, FormControl } from "@/components/ui/form";
 import CustomFormField from "@/components/CustomFormField";
 import SubmitButton from "@/components/SubmitButton";
 import { PatientFormValidation } from "@/lib/validation";
-import { createUser, registerPatient } from "@/lib/actions/patient.actions";
+import { registerPatient } from "@/lib/actions/patient.actions";
 import { useRouter } from "next/navigation";
 import { FormFieldType } from "./PatientForm";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
@@ -60,7 +60,6 @@ const RegisterForm = ({ user }: { user: User }) => {
         identificationDocument: formData,
       };
 
-      // @ts-ignore
       const patient = await registerPatient(patientData);
 
       if (patient) {
